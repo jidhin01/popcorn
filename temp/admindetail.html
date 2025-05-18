@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Detail</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{ valuesss.movie_image.url }}" class="img-fluid">
+        </div>
+        <div class="col-md-6">
+            <h1>{{ valuesss.movie_name }}</h1>
+            <p>{{ valuesss.movie_description }}</p>
+            <h3>{{ valuesss.movie_year }}</h3>
+
+            <a class="btn btn-warning btn-lg me-3" href="{% url 'adminupdate' valuesss.id %}">Update</a>
+            <a class="btn btn-danger btn-lg" href="{% url 'admindelete' valuesss.id %}">Delete</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

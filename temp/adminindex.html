@@ -1,0 +1,696 @@
+{% load static %}
+
+
+<html lang="zxx">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Home</title>
+
+	<link rel="stylesheet" href="{% static 'assets/css/style-starter.css' %}">
+	<link href="//fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,600&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+
+	<!-- header -->
+	<header id="site-header" class="w3l-header fixed-top">
+		<!--/nav-->
+		<nav class="navbar navbar-expand-lg navbar-light fill px-lg-0 py-0 px-3">
+			<div class="container">
+				<h1><a class="navbar-brand" href="{% url 'index' %}"><span class="fa fa-play icon-log"
+							aria-hidden="true"></span>
+						Popcorn</a></h1>
+
+				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<!-- <span class="navbar-toggler-icon"></span> -->
+					<span class="fa icon-expand fa-bars"></span>
+					<span class="fa icon-close fa-times"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="{% url 'index' %}">Home</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'about' %}">About</a>
+						</li>
+                      <li class="nav-item">
+							<a class="nav-link" href="{% url 'adminpage' %}">Adminpage</a>
+						</li>
+
+					</ul>
+
+					<!--/search-right-->
+					<!--/search-right-->
+					<div class="search-right">
+						<a href="#search" class="btn search-hny mr-lg-3 mt-lg-0 mt-4" title="search">Search <span
+								class="fa fa-search ml-3" aria-hidden="true"></span></a>
+						<!-- search popup -->
+						<div id="search" class="pop-overlay">
+							<div class="popup">
+								<form action="#" method="post" class="search-box">
+									<input type="search" placeholder="Search your Keyword" name="search"
+										required="required" autofocus="">
+									<button type="submit" class="btn"><span class="fa fa-search"
+											aria-hidden="true"></span></button>
+								</form>
+
+							<a class="close" href="#close">×</a>
+						</div>
+						<!-- /search popup -->
+						<!--/search-right-->
+
+					</div>
+					<div class="Login_SignUp" id="login"
+						style="font-size: 2rem ; display: inline-block; position: relative;">
+						<!-- <li class="nav-item"> -->
+												{% if user.is_authenticated %}
+
+						<ul class="navbar-nav ml-auto">
+
+						<li class="nav-item">
+									<a class="nav-link">Hello {{user.username}}</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'accounts:logout' %}">Logout</a>
+						</li>
+									        	{% else %}
+						<a class="nav-link" href="{% url 'accounts:sign_in' %}"><i class="fa fa-user-circle-o"></i></a>
+										{% endif %}
+					</ul>
+
+						<!-- </li> -->
+					</div>
+				</div>
+				<!-- toggle switch for light and dark theme -->
+				<div class="mobile-position">
+    <nav class="navigation">
+        <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox">
+                <div class="mode-container">
+                    <i class="gg-moon"></i>
+                    <i class="gg-sun"></i>
+                </div>
+            </label>
+        </div>
+    </nav>
+</div>
+
+		</nav>
+	</header>
+	<!-- main-slider -->
+	<section class="w3l-main-slider position-relative" id="home">
+		<div class="companies20-content">
+			<div class="owl-one owl-carousel owl-theme">
+				<div class="item">
+					<li>
+						<div class="slider-info banner-view bg bg2">
+							<div class="banner-info">
+								<h3>Latest Movie Trailers</h3>
+								<p>
+									Interstellar (2014): A sci-fi epic about astronauts traveling through a wormhole to save humanity, exploring time, space, and love.								</span></p>
+								<a href="https://www.youtube.com/watch?v=zSWdZVtXT7E" class="popup-with-zoom-anim play-view1">
+									<span class="video-play-icon">
+										<span class="fa fa-play"></span>
+									</span>
+									<h6>Watch Trailer</h6>
+								</a>
+								<div id="small-dialog1" class="zoom-anim-dialog mfp-hide">
+									<iframe src="https://player.vimeo.com/video/358205676" allow="autoplay; fullscreen"
+										allowfullscreen=""></iframe>
+								</div>
+							</div>
+						</div>
+					</li>
+				</div>
+				<div class="item">
+					<li>
+						<div class="slider-info  banner-view banner-top1 bg bg2">
+							<div class="banner-info">
+								<h3>Latest Online Movies</h3>
+								<p>
+									Requiem for a Dream (2000): A haunting drama about addiction’s destructive grip on four lives, featuring intense storytelling and visuals.								</span></p>
+								<a href="https://www.youtube.com/watch?v=QBwzN4v1vA0" class="popup-with-zoom-anim play-view1">
+									<span class="video-play-icon">
+										<span class="fa fa-play"></span>
+									</span>
+									<h6>Watch Trailer</h6>
+								</a>
+								<div id="small-dialog2" class="zoom-anim-dialog mfp-hide">
+									<iframe src="https://player.vimeo.com/video/395376850" allow="autoplay; fullscreen"
+										allowfullscreen=""></iframe>
+								</div>
+							</div>
+						</div>
+					</li>
+				</div>
+
+				<div class="item">
+					<li>
+						<div class="slider-info banner-view banner-top2 bg bg2">
+							<div class="banner-info">
+								<h3>Latest Movie Trailers</h3>
+								<p>
+									Dune (2021): A sci-fi saga about Paul Atreides navigating power, prophecy, and war on the desert planet Arrakis.								</span></p>
+								<a href="https://www.youtube.com/watch?v=8g18jFHCLXk" class="popup-with-zoom-anim play-view1">
+									<span class="video-play-icon">
+										<span class="fa fa-play"></span>
+									</span>
+									<h6>Watch Trailer</h6>
+								</a>
+								<div id="small-dialog3" class="zoom-anim-dialog mfp-hide">
+									<iframe src="https://player.vimeo.com/video/389969665" allow="autoplay; fullscreen"
+										allowfullscreen=""></iframe>
+								</div>
+							</div>
+						</div>
+					</li>
+				</div>
+
+
+
+				<div class="item">
+					<li>
+						<div class="slider-info banner-view banner-top3 bg bg2">
+							<div class="banner-info">
+								<h3>Latest Online Movies</h3>
+								<p>
+									The Prestige (2006): A psychological thriller about two rival magicians whose obsession leads to deception and sacrifice.								</span></p>
+								<a href="https://www.youtube.com/watch?v=ijXruSzfGEc" class="popup-with-zoom-anim play-view1">
+									<span class="video-play-icon">
+										<span class="fa fa-play"></span>
+									</span>
+									<h6>Watch Trailer</h6>
+								</a>
+								<div id="small-dialog4" class="zoom-anim-dialog mfp-hide">
+									<iframe src="https://player.vimeo.com/video/323491174" allow="autoplay; fullscreen"
+										allowfullscreen=""></iframe>
+								</div>
+							</div>
+						</div>
+					</li>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- main-slider -->
+	<!--grids-sec1-->
+
+<!--		start		/////////////////////////////////////////-->
+
+
+<!--	/*///*/*/*/*/*/*/-->
+
+	<section class="w3l-grids">
+		<div class="grids-main py-5">
+			<div class="container py-lg-3">
+				<div class="headerhny-title">
+					<div class="w3l-title-grids">
+						<div class="headerhny-left">
+							<h3 class="hny-title">Book Tickets</h3>
+						</div>
+						<div class="headerhny-right text-lg-right">
+						</div>
+					</div>
+				</div>
+				<div class="w3l-populohny-grids">
+					{% for i in value %}
+						<div class="item vhny-grid">
+							<div class="box16">
+								<a href=".Commando3" data-toggle="modal">
+									<figure>
+										<img class="img-fluid" src="{{i.movie_image.url}}" alt="">
+									</figure>
+									<div class="box-content" data-year="{{i.movie_year}}" data-description="{{i.movie_description}}" data-imgUrl="{{i.movie_image.url}}">
+										<h3 class="title">{{i.movie_name}}</h3>
+										<h4> <span class="post"><span class="fa fa-clock-o"> </span> {{i.movie_duration}}
+
+											</span>
+
+											<span class="post fa fa-heart text-right"></span>
+										</h4>
+									</div>
+									<span class="fa fa-play video-icon" aria-hidden="true"></span>
+
+
+									<!-- modal -->
+									<div class="modal fade Commando3" id="myModal" tabindex="-1" role="dialog"
+										aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content" id="mymodalcontent">
+												<div class="modal-header">
+													<h4 class="modal-title" id="exampleModalLongTitle">DETAILS</h4>
+													<button type="button" class="closebtn" data-dismiss="modal"
+														aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													</button>
+												</div>
+												<div class="modal-body" id="dynamic-content">
+													<img id="modalImage" src="" class="img-fluid modalimg" alt="" />
+													<p>
+														<h3>Release Date&nbsp;:<span id="release-date"></span></h3>
+														<h3>Venue&nbsp;:IMAX Kochi </h3>
+													</p>
+													<h4>About Movie</h4>
+													<p>
+														<span id="description"></span>
+													</p>
+												</div>
+												<div class="bookbtn">
+													<button type="button" class="btn btn-success"
+														onclick="location.href='{% url 'ticket-booking' %}';">Book</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- modal end -->
+
+								</a>
+							</div>
+						</div>
+
+
+
+					{% endfor %}
+					<!-- <div class="item vhny-grid">
+						<div class="box16">
+							<a href="movies.html">
+								<figure>
+									<img class="img-fluid" src="assets/images/commando2.jpeg" alt="">
+								</figure>
+								<div class="box-content">
+									<h3 class="title">Commando-3</h3>
+									<h4> <span class="post"><span class="fa fa-clock-o"> </span> 1 Hr 4min
+
+										</span>
+
+										<span class="post fa fa-heart text-right"></span>
+									</h4>
+								</div>
+								<span class="fa fa-play video-icon" aria-hidden="true"></span>
+							</a>
+						</div>
+					</div> -->
+					<!-- <div class="item vhny-grid">
+						<div class="box16">
+							<a href="movies.html">
+								<figure>
+									<img class="img-fluid" src="assets/images/gujju2.jpeg" alt="">
+								</figure>
+								<div class="box-content">
+									<h3 class="title">Gujjubhai Most Wanted</h3>
+									<h4> <span class="post"><span class="fa fa-clock-o"> </span> 1 Hr 4min
+
+										</span>
+
+										<span class="post fa fa-heart text-right"></span>
+									</h4>
+								</div>
+								<span class="fa fa-play video-icon" aria-hidden="true"></span>
+							</a>
+						</div>
+					</div> -->
+					<!-- <div class="item vhny-grid">
+						<div class="box16">
+							<a href="movies.html">
+								<figure>
+									<img class="img-fluid" src="assets/images/avtar-2.jpeg" alt="">
+								</figure>
+								<div class="box-content">
+									<h3 class="title">Avatar333</h3>
+									<h4> <span class="post"><span class="fa fa-clock-o"> </span> 1 Hr 4min
+
+										</span>
+
+										<span class="post fa fa-heart text-right"></span>
+									</h4>
+								</div>
+								<span class="fa fa-play video-icon" aria-hidden="true"></span>
+							</a>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</section>
+<!--	/*/*/*/*/*/*/*/-->
+
+	<!--grids-sec2-->
+	<!--mid-slider -->
+
+
+
+	</section>
+
+
+	<!-- footer-66 -->
+	<footer class="w3l-footer">
+		<section class="footer-inner-main">
+			<div class="footer-hny-grids py-5">
+				<div class="container py-lg-4">
+					<div class="text-txt">
+						<div class="right-side">
+							<div class="row footer-about">
+									<div class="col-md-3 col-6 footer-img mb-lg-0 mb-4">
+									<a href="{% url 'index' %}"><img class="img-fluid" src="{% static 'assets/images/banner1.jpg' %}"
+											alt=""></a>
+								</div>
+								<div class="col-md-3 col-6 footer-img mb-lg-0 mb-4">
+									<a href="{% url 'index' %}"><img class="img-fluid" src="{% static 'assets/images/banner2.jpg' %}"
+											alt=""></a>
+								</div>
+								<div class="col-md-3 col-6 footer-img mb-lg-0 mb-4">
+									<a href="{% url 'index' %}"><img class="img-fluid" src="{% static 'assets/images/banner3.jpg' %}"
+											alt=""></a>
+								</div>
+								<div class="col-md-3 col-6 footer-img mb-lg-0 mb-4">
+									<a href="{% url 'index' %}"><img class="img-fluid" src="{% static 'assets/images/banner4.jpg' %}"
+											alt=""></a>
+								</div>
+							</div>
+							<div class="row footer-links">
+
+
+								<div class="col-md-3 col-sm-6 sub-two-right mt-5">
+									<h6>Information</h6>
+									<ul>
+										<li><a href="{% url 'index' %}">Home</a> </li>
+										<li><a href="{% url 'about' %}">About</a> </li>
+										<li><a href="{% url 'sign_in' %}">Login</a></li>
+									</ul>
+								</div>
+								<div class="col-md-3 col-sm-6 sub-two-right mt-5">
+									<h6>Newsletter</h6>
+									<form action="#" class="subscribe mb-3" method="post">
+										<input type="email" name="email" placeholder="Your Email Address" required="">
+										<button><span class="fa fa-envelope-o"></span></button>
+									</form>
+									<p>Enter your email and receive the latest news, updates and special offers from us.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+			<div class="below-section">
+				<div class="container">
+					<div class="copyright-footer">
+						<div class="columns text-lg-left">
+							<p>&copy; 2021 Popcorn. All rights reserved</p>
+					   </div>
+
+						<ul class="social text-lg-right">
+							<li><a href="https://www.facebook.com/login"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+							</li>
+							<li><a href="https://www.linkedin.com/login"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
+							</li>
+							<li><a href="https://twitter.com/login"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+							</li>
+							<li><a href="https://accounts.google.com/"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- move top -->
+			<button onclick="topFunction()" id="movetop" title="Go to top">
+				<span class="fa fa-arrow-up" aria-hidden="true"></span>
+			</button>
+<script>
+				// When the user scrolls down 20px from the top of the document, show the button
+				window.onscroll = function () {
+					scrollFunction()
+				};
+
+				function scrollFunction() {
+					if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+						document.getElementById("movetop").style.display = "block";
+					} else {
+						document.getElementById("movetop").style.display = "none";
+					}
+				}
+
+				// When the user clicks on the button, scroll to the top of the document
+				function topFunction() {
+					document.body.scrollTop = 0;
+					document.documentElement.scrollTop = 0;
+				}
+</script>
+			<!-- /move top -->
+
+		</section>
+	</footer>
+</body>
+
+</html>
+<!-- responsive tabs -->
+<script src="{% static 'assets/js/jquery-1.9.1.min.js' %}"></script>
+<script src="{% static 'assets/js/easyResponsiveTabs.js' %}"></script>
+
+<!--*************-->
+<script>
+	$(document).ready(function () {
+		$(".box-content").click(function(){
+			var description = $(this).attr("data-description");
+			var year = $(this).attr("data-year");
+			var imgUrl = $(this).attr("data-imgUrl");
+
+			$('#release-date').html(year)
+			$('#description').html(description)
+			$('#modalImage').attr("src", imgUrl)
+
+		});
+	});
+</script>
+<!--*****************-->
+<script type="text/javascript">
+	$(document).ready(function () {
+		//Horizontal Tab
+		$('#parentHorizontalTab').easyResponsiveTabs({
+			type: 'default', //Types: default, vertical, accordion
+			width: 'auto', //auto or any width like 600px
+			fit: true, // 100% fit in a container
+			tabidentify: 'hor_1', // The tab groups identifier
+			activate: function (event) { // Callback function if tab is switched
+				var $tab = $(this);
+				var $info = $('#nested-tabInfo');
+				var $name = $('span', $info);
+				$name.text($tab.text());
+				$info.show();
+			}
+		});
+	});
+</script>
+<!--/theme-change-->
+<script src="{% static 'assets/js/theme-change.js' %}"></script>
+<script src="{% static 'assets/js/owl.carousel.js' %}"></script>
+<!-- script for banner slider-->
+<script>
+	$(document).ready(function () {
+		$('.owl-one').owlCarousel({
+			stagePadding: 280,
+			loop: true,
+			margin: 20,
+			nav: true,
+			responsiveClass: true,
+			autoplay: true,
+			autoplayTimeout: 5000,
+			autoplaySpeed: 1000,
+			autoplayHoverPause: false,
+			responsive: {
+				0: {
+					items: 1,
+					stagePadding: 40,
+					nav: false
+				},
+				480: {
+					items: 1,
+					stagePadding: 60,
+					nav: true
+				},
+				667: {
+					items: 1,
+					stagePadding: 80,
+					nav: true
+				},
+				1000: {
+					items: 1,
+					nav: true
+				}
+			}
+		})
+	})
+</script>
+<script>
+	$(document).ready(function () {
+		$('.owl-three').owlCarousel({
+			loop: true,
+			margin: 20,
+			nav: false,
+			responsiveClass: true,
+			autoplay: true,
+			autoplayTimeout: 5000,
+			autoplaySpeed: 1000,
+			autoplayHoverPause: false,
+			responsive: {
+				0: {
+					items: 2,
+					nav: false
+				},
+				480: {
+					items: 2,
+					nav: true
+				},
+				667: {
+					items: 3,
+					nav: true
+				},
+				1000: {
+					items: 5,
+					nav: true
+				}
+			}
+		})
+	})
+</script>
+<script>
+	$(document).ready(function () {
+		$('.owl-mid').owlCarousel({
+			loop: true,
+			margin: 0,
+			nav: false,
+			responsiveClass: true,
+			autoplay: true,
+			autoplayTimeout: 5000,
+			autoplaySpeed: 1000,
+			autoplayHoverPause: false,
+			responsive: {
+				0: {
+					items: 1,
+					nav: false
+				},
+				480: {
+					items: 1,
+					nav: false
+				},
+				667: {
+					items: 1,
+					nav: true
+				},
+				1000: {
+					items: 1,
+					nav: true
+				}
+			}
+		})
+	})
+</script>
+<!-- script for owlcarousel -->
+<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+<script>
+	$(document).ready(function () {
+		$('.popup-with-zoom-anim').magnificPopup({
+			type: 'inline',
+
+			fixedContentPos: false,
+			fixedBgPos: true,
+
+			overflowY: 'auto',
+
+			closeBtnInside: true,
+			preloader: false,
+
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-zoom-in'
+		});
+
+		$('.popup-with-move-anim').magnificPopup({
+			type: 'inline',
+
+			fixedContentPos: false,
+			fixedBgPos: true,
+
+			overflowY: 'auto',
+
+			closeBtnInside: true,
+			preloader: false,
+
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-slide-bottom'
+		});
+	});
+</script>
+<!-- disable body scroll which navbar is in active -->
+<script>
+	$(function () {
+		$('.navbar-toggler').click(function () {
+			$('body').toggleClass('noscroll');
+		})
+	});
+</script>
+<!-- disable body scroll which navbar is in active -->
+
+<!--/MENU-JS-->
+<script>
+	$(window).on("scroll", function () {
+		var scroll = $(window).scrollTop();
+
+		if (scroll >= 80) {
+			$("#site-header").addClass("nav-fixed");
+		} else {
+			$("#site-header").removeClass("nav-fixed");
+		}
+	});
+
+	//Main navigation Active Class Add Remove
+	$(".navbar-toggler").on("click", function () {
+		$("header").toggleClass("active");
+	});
+	$(document).on("ready", function () {
+		if ($(window).width() > 991) {
+			$("header").removeClass("active");
+		}
+		$(window).on("resize", function () {
+			if ($(window).width() > 991) {
+				$("header").removeClass("active");
+			}
+		});
+	});
+</script>
+
+
+
+<script>
+    $(document).ready(function () {
+        $('.popup-with-zoom-anim').magnificPopup({
+            type: 'iframe',
+            removalDelay: 300,
+            mainClass: 'mfp-fade'
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>

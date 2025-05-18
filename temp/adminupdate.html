@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Update</title>
+    <style>
+        /* General Page Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Heading Styling */
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Form Container */
+        .custom-form {
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        /* Form Inputs */
+        .custom-form input,
+        .custom-form select,
+        .custom-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        /* Input Focus Effect */
+        .custom-form input:focus,
+        .custom-form select:focus,
+        .custom-form textarea:focus {
+            border-color: #D4AF37;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            background: #D4AF37;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #B8860B;
+        }
+
+        /* Back Button */
+        .back-btn {
+            width: 100%;
+            background: #f0f2f5;
+            color: #333;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #ccc;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            .custom-form {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Back to Reviews Button -->
+    <a href="{% url 'adminpage' %}" class="back-btn">Back to Reviews</a>
+
+    <h1>Update Movie</h1>
+
+    <form method="POST" enctype="multipart/form-data" class="custom-form">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" class="submit-btn" value="Update">
+    </form>
+
+</body>
+</html>
