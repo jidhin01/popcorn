@@ -237,7 +237,7 @@
 											<span class="post fa fa-heart text-right"></span>
 										</h4>
 									</div>
-									<span class="fa fa-play video-icon" aria-hidden="true"></span>
+									<!-- <span class="fa fa-play video-icon" aria-hidden="true"></span> -->
 
 
 									<!-- modal -->
@@ -264,8 +264,11 @@
 													</p>
 												</div>
 												<div class="bookbtn">
-													<button type="button" class="btn btn-success"
-														onclick="location.href='{% url 'ticket-booking' %}';">Book</button>
+													<a href="{% url 'ticket-booking' %}" 
+													class="btn btn-success" 
+													role="button">
+													Book
+													</a>
 												</div>
 											</div>
 										</div>

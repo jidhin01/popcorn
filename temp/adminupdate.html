@@ -4,44 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Update</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         /* General Page Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: #f0f2f5;
+            color: #333;
             text-align: center;
-            padding: 20px;
+            padding: 40px; /* Increased padding */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
         }
 
         /* Heading Styling */
         h1 {
+            font-size: 32px; /* Made heading bigger */
+            font-weight: 700;
+            margin-bottom: 30px; /* Increased bottom margin */
+        }
+
+        /* Back Button */
+        .back-btn {
+            background-color: #f0f2f5;
             color: #333;
-            font-size: 24px;
-            margin-bottom: 20px;
+            padding: 16px 24px; /* Increased padding for a bigger button */
+            border: 1px solid #ccc;
+            border-radius: 8px; /* Slightly larger border-radius */
+            font-size: 18px; /* Made font bigger */
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 30px; /* Increased bottom margin */
+            transition: background 0.3s ease;
+            width: 100%;
+            max-width: 400px; /* Kept max-width to match the form */
+            box-sizing: border-box; /* Ensures padding is included in the width */
+        }
+
+        .back-btn:hover {
+            background: #ccc;
         }
 
         /* Form Container */
         .custom-form {
-            width: 400px;
+            width: 100%;
+            max-width: 600px; /* Increased max-width for a larger form */
             margin: auto;
-            padding: 20px;
+            padding: 40px; /* Increased padding inside the form */
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px; /* Bigger rounded corners */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* More prominent shadow */
             text-align: left;
+            box-sizing: border-box;
         }
 
-        /* Form Inputs */
+        /* Form Inputs and Labels */
+        .custom-form p {
+            display: flex;
+            flex-direction: column;
+            gap: 12px; /* Added spacing between label and input */
+            margin-bottom: 25px; /* Increased spacing between form fields */
+        }
+
+        .custom-form label {
+            font-size: 18px; /* Made labels bigger */
+            font-weight: 500;
+            color: #555;
+        }
+
         .custom-form input,
         .custom-form select,
         .custom-form textarea {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
+            padding: 18px; /* Made inputs much bigger */
             border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 8px;
+            font-size: 18px; /* Made font bigger */
             transition: all 0.3s ease;
+            box-sizing: border-box;
         }
 
         /* Input Focus Effect */
@@ -50,7 +96,7 @@
         .custom-form textarea:focus {
             border-color: #D4AF37;
             outline: none;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.4); /* Used gold color for focus effect */
         }
 
         /* Submit Button */
@@ -58,10 +104,11 @@
             width: 100%;
             background: #D4AF37;
             color: white;
-            padding: 12px;
+            padding: 20px; /* Made button bigger and more prominent */
             border: none;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 8px;
+            font-size: 20px; /* Made font bigger and bolder */
+            font-weight: 700;
             cursor: pointer;
             transition: background 0.3s ease;
         }
@@ -70,37 +117,21 @@
             background: #B8860B;
         }
 
-        /* Back Button */
-        .back-btn {
-            width: 100%;
-            background: #f0f2f5;
-            color: #333;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 20px;
-            transition: background 0.3s ease;
-        }
-
-        .back-btn:hover {
-            background: #ccc;
-        }
-
         /* Responsive Design */
-        @media (max-width: 500px) {
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
             .custom-form {
-                width: 90%;
+                width: 100%;
+                padding: 20px;
+                max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Back to Reviews Button -->
     <a href="{% url 'adminpage' %}" class="back-btn">Back to Reviews</a>
 
     <h1>Update Movie</h1>

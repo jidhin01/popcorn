@@ -5,40 +5,48 @@ from django.contrib.auth.models import User
 
 def sign_in(request):
     if request.method == 'POST':
-        if 'signup' in request.POST:  # If Sign Up form is submitted
-            sign_up_name = request.POST.get('sign_up_name', '')  # Use .get() to avoid KeyError
-            sign_up_email = request.POST.get('sign_up_email', '')
+        # ------------------- SIGN UP -------------------
+        if 'signup' in request.POST:
+            sign_up_name = request.POST.get('sign_up_name', '').strip()
+            sign_up_email = request.POST.get('sign_up_email', '').strip()
             sign_up_passwd = request.POST.get('sign_up_passwd', '')
 
-            if User.objects.filter(username=sign_up_name).exists():
-                messages.error(request, ' ')
+            if not sign_up_name or not sign_up_email or not sign_up_passwd:
+                messages.error(request, "All fields are required.")
+            elif User.objects.filter(username=sign_up_name).exists():
+                messages.error(request, "Username already exists.")
             else:
-                user = User.objects.create_user(username=sign_up_name, email=sign_up_email, password=sign_up_passwd)
+                user = User.objects.create_user(
+                    username=sign_up_name,
+                    email=sign_up_email,
+                    password=sign_up_passwd
+                )
                 user.save()
-                messages.success(request, ' ')
+                messages.success(request, "Account created successfully. Please sign in.")
+                return redirect('accounts:sign_in')   # Redirect to signin after signup
 
-        elif 'signin' in request.POST:  # If Sign In form is submitted
-            sign_in_username = request.POST.get('sign_in_username', '')  # Use .get()
+        # ------------------- SIGN IN -------------------
+        elif 'signin' in request.POST:
+            sign_in_username = request.POST.get('sign_in_username', '').strip()
             sign_in_passwd = request.POST.get('sign_in_passwd', '')
 
             user = auth.authenticate(username=sign_in_username, password=sign_in_passwd)
 
             if user is not None:
-                # Log the user in
                 auth.login(request, user)
 
-                # Check if the user is an admin (superuser)
+                # Superuser → adminindex page
                 if user.is_superuser:
-                    return redirect('adminindex')  # Redirect to adminindex page for admin users
-                else:
-                    return redirect('/')  # Redirect to home page for regular users
+                    return redirect('adminindex')
+
+                # Normal user → home page
+                return redirect('index')   # safer than "/"
             else:
-                # If authentication fails, show an error message
-                messages.error(request, ' ')
+                messages.error(request, "Invalid username or password.")
 
     return render(request, 'sign_in.html')
 
 
 def logout_view(request):
     auth.logout(request)
-    return redirect('/')
+    return redirect('index')
