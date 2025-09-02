@@ -5,7 +5,7 @@
 
 **Demo:**
 
-![Screen Recording 2025-09-02 at 13 03 44](https://github.com/user-attachments/assets/054c63f1-c420-4fec-af57-6ca0d473c7f1)
+![Screen Recording 2025-09-02 at 15 35 33 mov-2](https://github.com/user-attachments/assets/7d4537e8-bc0a-481e-a17a-39f2bfbeda1e)
 
 A responsive movie ticket booking web application with secure authentication and an intuitive user interface.
 
@@ -21,23 +21,22 @@ I've kept the pages as simple as possible. Only the required sections are includ
 
 #### Landing
 
-<img width="1354" height="871" alt="Screenshot 2025-09-02 at 12 20 20" src="https://github.com/user-attachments/assets/e29a8c30-ea5e-430a-b54a-fd17de8087aa" />
+<img width="1677" height="961" alt="Screenshot 2025-09-02 at 15 37 42" src="https://github.com/user-attachments/assets/34acc90c-85e7-4efa-bea2-93c6b3f75579" />
 
-#### Chat
+#### Details
 
-<img width="1356" height="872" alt="Screenshot 2025-09-02 at 12 20 31" src="https://github.com/user-attachments/assets/435bad93-d49f-4767-adad-be9150ffa62b" />
+<img width="1680" height="965" alt="Screenshot 2025-09-02 at 15 37 56" src="https://github.com/user-attachments/assets/c6b7c863-d20d-45e8-8cce-ab6ac566df5f" />
 
-#### Profile
+#### Ticket Booking page
 
-<img width="1354" height="874" alt="Screenshot 2025-09-02 at 12 20 41" src="https://github.com/user-attachments/assets/4d99fe58-7c46-4ad3-ba00-f19d16bafcc2" />
+<img width="1664" height="964" alt="Screenshot 2025-09-02 at 15 38 09" src="https://github.com/user-attachments/assets/8518f34f-a9fd-4ccb-ac7a-4ef0b0de835b" />
 
-#### Contact
 
-<img width="1358" height="868" alt="Screenshot 2025-09-02 at 12 20 58" src="https://github.com/user-attachments/assets/f19b8456-41e6-4ae0-a934-43015d0b1c7d" />
+#### Admin Page
 
-#### Settings
+<img width="1680" height="960" alt="Screenshot 2025-09-02 at 15 38 54" src="https://github.com/user-attachments/assets/a7747de3-87ba-401a-a7fc-8c1cbaa9d008" />
 
-<img width="1353" height="876" alt="Screenshot 2025-09-02 at 12 21 09" src="https://github.com/user-attachments/assets/353e10fb-1b35-4be9-981f-7691f3b52907" />
+
 
 ### Tech Stack
 - **[Django](https://www.djangoproject.com)**: Python web framework for rapid development and clean design.
